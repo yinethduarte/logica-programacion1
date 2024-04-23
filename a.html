@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let numero1 = Number(prompt("Ingrese el primer número: "));
+    let numero2 = Number(prompt("Ingrese el segundo número: "));
+    let numero3 = Number(prompt("Ingrese el tercer número: "));
+
+    let numeros = [numero1, numero2, numero3];
+    let numeroMayor = numeros[0];
+    let numeroMenor = numeros[0];
+    let numeroCentro;
+
+    //primero valida que los números ingresados no sean iguales
+    if (numero1 === numero2 && numero1 === numero3 && numero2 === numero3) {
+      console.log("Los números ingresados son iguales");
+    } else {
+      //sino, puede encontrar número menor, centro y mayor
+      for (var i = 1; i < numeros.length; i++) {
+        if (numeros[i] > numeroMayor) {
+          numeroMayor = numeros[i];
+        }
+        if (numeros[i] < numeroMenor) {
+          numeroMenor = numeros[i];
+        }
+      }
+      for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] !== numeroMayor && numeros[i] !== numeroMenor) {
+          numeroCentro = numeros[i];
+        } else {
+          console.log("error");
+        }
+      }
+
+      console.log("El número mayor es: " + numeroMayor);
+      console.log("El número del centro es: " + numeroCentro);
+      console.log("El número menor es: " + numeroMenor);
+    }
+  </script>
+</html>
